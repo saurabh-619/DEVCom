@@ -1,0 +1,18 @@
+<!-- Header -->
+<%- include("../partials/header");  -%>
+
+
+      <div class="card card-body mb-2 ">
+        <h4 class="display-4 singleTitle"> <%= idea.title %> </h4>
+        <p class="content"> <%= idea.details %> </p>
+        <div class="row">
+          <span class="mt-auto pl-1 display-5 author">Author : <%= idea.userName %> </span>
+          <span class="mt-auto ml-auto mr-2 author display-5">
+            <%=`${idea.date.toLocaleTimeString()} ${idea.date.getDate()}/${idea.date.getMonth()+1}/${idea.date.getFullYear()} `%>
+          </span>
+        </div>
+      </div>
+
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>

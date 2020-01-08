@@ -1,0 +1,34 @@
+<!-- Header -->
+<%- include("../partials/header");  -%>
+  
+
+  <% if(ideas.length === 0){ %>
+    <p style="color: #eee;">No Web-Ideas listed 😥</p>
+  <% }else{ %>
+    <% ideas.forEach(function(idea){ %>
+      <div data-aos="flip-left">
+        <div class="card card-body myideas">
+          <h4> <%= idea.title %> </h4>
+          <p class="content"> <%= idea.details.substring(0,35)+"...." %><a href="/ideas/all/single/<%= idea._id %> " class="readmore">Read More</a></p>
+          <div class="btnarr mb-0">
+            <a href="/ideas/edit/<%= idea.id %>" class="btn btn-lg btn-outline-light mybtn1">Edit</a>
+            <form action="/ideas/delete/<%= idea.id %>?_method=DELETE" class="mybtn2" method="POST">
+              <input type="submit" class="btn btn-lg btn-outline-dark mybtn2" value="Delete">
+            </form>
+          </div>
+          <h6 class="ml-auto pt-4 mb-0">
+            <%=`${idea.date.toLocaleTimeString()}  ${idea.date.getDate()}/${idea.date.getMonth()+1}/${idea.date.getFullYear()}  `%>
+          </h6>
+        </div>
+      </div>
+    <% }) %>
+  <% } %>
+  
+  
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>
+
+
+
+ 

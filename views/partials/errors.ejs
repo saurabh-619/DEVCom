@@ -1,0 +1,21 @@
+<!-- error whie password authentication -->
+<% if(error!="" ){ %>
+  <div class="alert alert-danger">
+    <%= error %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% } %> 
+
+
+<!-- display form register validation errors -->
+<% errors.forEach(function(error){ %>
+  <div class="alert alert-danger">
+    <%= error.text %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% }) %>
+  

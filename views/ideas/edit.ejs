@@ -1,0 +1,24 @@
+<!-- Header -->
+<%- include("../partials/header");  -%> 
+
+<div class="card card-body edit">
+  <h3>Edit DEV Ideas</h3>
+  <form action="/ideas/edit/<%= idea._id %>?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control text" name="title" value="<%= idea.title %>">
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control text" name="details"> <%= idea.details %> </textarea>
+    </div>
+    <button type="submit" class="btn btn-dark" name="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>
+
+
+ 

@@ -1,0 +1,41 @@
+<!-- Header -->
+<%- include("../partials/header");  -%>
+
+<!-- Errors in user login and register -->
+<%- include('../partials/errors'); -%> 
+
+  <div class="row register">
+    <div class="col-md-6 mx-auto ">
+      <div class="card card-body mt-2 mb-2">
+        <img src="/images/DevCopy.png" class="img-fluid mylogo" alt="DEV Com logo">
+        <h3 class="text-center mt-2 form-heading">Account Register</h3>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control text" value="<%= name %>" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= email %>" class="form-control text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="<%=password%>" class="form-control text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordC">Confirm Password</label>
+            <input type="password" name="passwordC" id="passwordC" value="<%=passwordC%>" class="form-control text" required>
+          </div>
+
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>

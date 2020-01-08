@@ -1,0 +1,25 @@
+<!-- Header -->
+<%- include("../partials/header");  -%>
+
+ 
+<% if(ideas.length === 0){ %>
+  <p>No Web-Ideas listed</p>
+<% }else{ %>
+  <% ideas.forEach(function(idea){ %> 
+    <div data-aos="flip-left">  
+      <div class="card card-body all">
+        <h4 class="display-4 title"> <%= idea.title %> </h4>
+        <p class="display-6 content"> <%= idea.details.substring(0,40)+"...." %> <a href="/ideas/all/single/<%= idea._id %> " class="readmore">Read More</a> </p>
+        <div class="row">
+          <span class="mt-auto pl-1 display-6 author">Author : <%= idea.userName %> </span>
+          <span class="mt-auto ml-auto mr-2  display-6 author">
+            <%=`${idea.date.toLocaleTimeString()}    ${idea.date.getDate()}/${idea.date.getMonth()+1}/${idea.date.getFullYear()} `%>
+          </span>
+        </div>
+      </div>
+    </div> 
+  <% }) %>
+<% } %>
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>

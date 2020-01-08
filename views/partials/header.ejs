@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="/css/style.css"> 
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon/android-chrome-512x512.png" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/18c846bb04.js" crossorigin="anonymous"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+
+
+  <title>DEV Com</title>
+</head>
+
+
+<body class="myBg"> 
+    <nav class="navbar navbar-expand-sm ">
+      <a class="navbar-brand ml-4 mr-5 text-center myBrand" href="/">DEV Com</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav homeabout" >
+          <li class="nav-item">
+            <a class="nav-link text-center navItems" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center navItems" href="/about">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <% if(user){ %> 
+            <li class="nav-item ">
+              <a href="/ideas/all" class="nav-link text-center navItems">All Ideas</a>
+            </li>
+              <li class="nav-item ">
+                <a href="/ideas" class="nav-link text-center navItems">My Ideas</a>
+              </li>
+              <li class="nav-item">
+                <a href="/ideas/add" class="nav-link text-center navItems">Add Idea</a>
+              </li> 
+            <li class="nav-item">
+              <a href="/users/logout" class="nav-link text-center navItems">Log Out</a>
+            </li>
+          <%} else{ %>
+          <li class="nav-item">
+            <a href="/users/login" class="nav-link text-center navItems">Login</a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="/users/register" class="nav-link text-center navItems">Register</a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- Flash messages for CRUD operatiions -->
+      <%- include('../partials/_msg'); -%>
+  
+  

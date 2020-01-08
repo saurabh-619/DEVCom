@@ -1,0 +1,20 @@
+<!-- Header -->
+<%- include("../partials/header");  -%>
+
+<div class="card card-body">
+  <h3>  DEV Ideas</h3>
+  <form action="/ideas" method="POST">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control text" name="title">
+    </div>
+    <div class="form-group">
+      <label for="details" >Details</label>
+      <textarea class="form-control text" name="details" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark" name="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<%- include("../partials/footer");  -%>
