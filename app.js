@@ -8,7 +8,7 @@ const passport = require('passport');
 
 
 
-mongoose.connect("mongodb+srv://Saurabh:9922676876sb@cluster0-18d6u.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true}); 
+mongoose.connect("mongodb+srv://Saurabhb@cluster0-18d6u.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true}); 
 
 
 
